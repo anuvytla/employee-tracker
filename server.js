@@ -1,6 +1,7 @@
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
 const util = require('util');
+const figlet = require('figlet');
 
 var connection = mysql.createConnection({
     host: 'localhost',
@@ -273,3 +274,12 @@ const updateEmployee = async() => {
         console.log(err);
     };
 }
+
+figlet('EMPLOYEE TRACKER', function(err, data) {
+    if (err) {
+        console.log('Something went wrong...');
+        console.dir(err);
+        return;
+    }
+    console.log(data);
+});
