@@ -2,6 +2,7 @@ const mysql = require('mysql2');
 const inquirer = require('inquirer');
 const util = require('util');
 const figlet = require('figlet');
+const console_table = require('console.table');
 
 // Connect to employee_db on the local server.
 var connection = mysql.createConnection({
@@ -311,4 +312,5 @@ figlet('EMPLOYEE TRACKER', function(err, data) {
         console.dir(err);
         return;
     }
+    console.log(data);
 });
